@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class provafaculdade {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Qual seu nome completo?");
+        String nomecompleto = scan.nextLine();
+
+        System.out.println("Qual sua data de nascimento? (00/00/0000)");
+        String datanascimento = scan.nextLine();
+
+        System.out.println("Qual sua categoria? (Empregado, Empregador ou Desempregado)");
+        String categoria = scan.nextLine();
+
+        if (categoria.equals("Empregado")) {
+            System.out.println("Você é aposentado?");
+            String aposentado = scan.nextLine();
+        }
+
+        if (categoria.equals("Empregador")) {
+            System.out.println("Quantos funcionários você possui?");
+            int quantidadefuncionarios = scan.nextInt();
+        }
+
+        if (categoria.equals("Desempregado")) {
+            System.out.println("Há quantos meses você está desempregado?");
+            int mesesdesempregado = scan.nextInt();
+        }
+
+        System.out.println("Em qual estado (UF) você mora?");
+        String estado = scan.next();
+
+        if (categoria.equals("Empregado")) {
+            System.out.println("Qual será o valor do benefício para o empregado? (Valor entre 1000 e 1800 reais, digite apenas números)");
+            int beneficioempregado = scan.nextInt();
+        }
+
+       if (categoria.equals("Empregador")) {
+           System.out.println("O empregador receberá 200 reais por funcionário");
+       }
+
+        if (categoria.equals("Desempregado")) {
+            System.out.println("Qual será o valor do benefício para o desempregado? (Valor entre 1500 e 2300 reais, digite apenas números)");
+            int beneficiodesempregado = scan.nextInt();
+        }
+
+        if (quantidadefuncionarios <= 10) {
+            System.out.println("O benefício será de 10 mesese para o Empregador");
+        }
+
+        if (datanascimento > 23/04/2003)
+            System.out.println("O beneficio foi negado, o beneficio só será concedido para maiores de 18 anos");
+
+        if (quantidadefuncionarios <= 20) {
+            System.out.println("Haverá um acrescimo de 15% sobre o valor total");
+        }
+
+        if (aposentado.equals("Sim")) {
+            System.out.println("O seu beneficio será de 6 meses por ser aposentado");
+        }
+
+        if (categoria.equals("Desempregado")) {
+            System.out.println("O seu beneficio será de 6 meses por ser Desempregado");
+        }
+
+        if (categoria.equals ("Empregado")) {
+            System.out.println("O seu beneficio será de 3 meses por ser Empregado");
+        }
+
+        System.out.println(nomecompleto);
+        System.out.println(datanascimento);
+        System.out.println(categoria);
+
+    }
+}
